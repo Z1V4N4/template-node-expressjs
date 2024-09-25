@@ -1,7 +1,6 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const authRoutes = require('./routes/authRoutes');
 
 require('dotenv').config();
 
@@ -11,7 +10,8 @@ const PORT = process.env.PORT;
 app.use(cors());
 app.use(bodyParser.json());
 
-app.use('./routes/authRoutes', authRoutes);
+// routes
+require("./routes/authRoutes")(app);
 
 //cek koneksi oracle
 const db_oracle = require("./models");
