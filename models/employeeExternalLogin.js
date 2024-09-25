@@ -2,50 +2,61 @@ module.exports = (sequelize, Sequelize) => {
     const employeeExternalLogin = sequelize.define('employeeExternalLogin', {
         LOGIN_ID: {
             type: Sequelize.STRING,
-            primaryKey: true
-        },
-        DEFAULT_PASS: {
-            type: Sequelize.STRING
-        },
-        PASSWORD_SALT: {
-            type: Sequelize.STRING
-        },
-        PASSWORD_HASH: {
-            type: Sequelize.STRING
-        },
-        LOGIN_PASSWORD: {
-            type: Sequelize.STRING
-        },
-        ISACTIVE: {
-            type: Sequelize.STRING
-        },
-        INSERT_DATE: {
-            type: Sequelize.TIME
-        },
-        UPDATE_DATE: {
-            type: Sequelize.TIME
-        },
-        UPDATE_BY: {
-            type: Sequelize.STRING
-        },
-        LAST_LOGIN_IP: {
-            type: Sequelize.STRING
-        },
-        LAST_LOGIN_APPL: {
-            type: Sequelize.STRING
-        },
-        COUNT_WRONG: {
-            type: Sequelize.INTEGER
-        },
-        ISLOCKED: {
-            type: Sequelize.STRING
-        }
-    },
-    {
-        tableName: 'EMPLOYEE_EXTERNAL_LOGIN',
-        freezeTableName: true,
-        timestamps: false
-      });
+            allowNull: false,
+            primaryKey: true,
+          },
+          DEFAULT_PASS: {
+            type: Sequelize.STRING,
+            allowNull: true,
+          },
+          PASSWORD_SALT: {
+            type: Sequelize.STRING,
+            allowNull: true,
+          },
+          PASSWORD_HASH: {
+            type: Sequelize.STRING,
+            allowNull: true,
+          },
+          LOGIN_PASSWORD: {
+            type: Sequelize.STRING,
+            allowNull: true,
+          },
+          ISACTIVE: {
+            type: Sequelize.STRING(1),
+            allowNull: false,
+          },
+          INSERT_DATE: {
+            type: Sequelize.DATE,
+            allowNull: true,
+          },
+          UPDATE_DATE: {
+            type: Sequelize.DATE,
+            allowNull: true,
+          },
+          UPDATE_BY: {
+            type: Sequelize.STRING,
+            allowNull: true,
+          },
+          LAST_LOGIN_IP: {
+            type: Sequelize.STRING,
+            allowNull: true,
+          },
+          LAST_LOGIN_APPL: {
+            type: Sequelize.STRING,
+            allowNull: true,
+          },
+          COUNT_WRONG: {
+            type: Sequelize.INTEGER,
+            allowNull: true,
+          },
+          ISLOCKED: {
+            type: Sequelize.STRING(1),
+            allowNull: false,
+          },
+        }, {
+          tableName: 'users',
+          timestamps: false,
+        });
 
     return employeeExternalLogin;
 };
