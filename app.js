@@ -14,13 +14,13 @@ app.use(bodyParser.json());
 app.use('./routes/authRoutes', authRoutes);
 
 //cek koneksi oracle
-const db_pg = require("./models");
-db_pg.sequelize.sync({ force: false, alter: false })
+const db_oracle = require("./models");
+db_oracle.sequelize.sync({ force: false, alter: false })
     .then(() => {
-        console.log("koneksi postgre ok");
+        console.log("koneksi oracle ok");
     })
     .catch((err) => {
-        console.log("koneksi postgre gagal: " + err.message);
+        console.log("koneksi oracle gagal: " + err.message);
     });
 
 app.listen(PORT, () => {
