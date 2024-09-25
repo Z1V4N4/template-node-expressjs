@@ -54,7 +54,7 @@ module.exports = (sequelize, Sequelize) => {
             allowNull: false,
           },
         }, {
-          tableName: 'users',
+          tableName: 'EMPLOYEE_EXTERNAL_LOGIN',
           timestamps: false,
         });
 
