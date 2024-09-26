@@ -1,6 +1,6 @@
 const dbConf = require("../configs/db.js");
 
-const Sequelize = require("sequelize");
+const { Sequelize, DataTypes } = require("sequelize");
 const sequelize = new Sequelize(dbConf.DB, dbConf.USER, dbConf.PASSWORD, {
     host: dbConf.HOST,
     dialect: dbConf.dialect,
@@ -16,7 +16,7 @@ const sequelize = new Sequelize(dbConf.DB, dbConf.USER, dbConf.PASSWORD, {
 
 const db = {};
 
-db.Sequelize = Sequelize;
+db.Sequelize = DataTypes;
 db.sequelize = sequelize;
 
 db.employeeExternalModel = require("./employeeExternalLogin.js")(sequelize, Sequelize);

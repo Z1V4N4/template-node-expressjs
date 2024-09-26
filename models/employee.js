@@ -1,5 +1,3 @@
-const e = require("express");
-
 module.exports = (sequelize, Sequelize) => {
     const employee = sequelize.define('employee', {
         LOGIN_ID: {
@@ -85,6 +83,7 @@ module.exports = (sequelize, Sequelize) => {
             allowNull: true,
           },
         }, {
+          scheme:"MUFIAM",
           tableName: 'EMPLOYEE',
           timestamps: false,
         });

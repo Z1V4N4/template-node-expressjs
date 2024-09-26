@@ -54,6 +54,7 @@ module.exports = (sequelize, Sequelize) => {
             allowNull: false,
           },
         }, {
+          scheme:"MUFIAM",
           tableName: 'EMPLOYEE_EXTERNAL_LOGIN',
           timestamps: false,
         });
