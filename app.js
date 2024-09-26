@@ -10,8 +10,8 @@ const PORT = process.env.PORT;
 app.use(cors());
 app.use(bodyParser.json());
 
-//routes
-app.use('./routes/authRoutes')(app);
+// routes
+require("./routes/authRoutes")(app);
 
 //cek koneksi oracle
 const db_oracle = require("./models");
