@@ -3,6 +3,6 @@ module.exports = (app) => {
   
     var router = require("express").Router();
  
-    router.post("/getAllData", authController.getAllData);
+    router.get("/getAllData", authController.getAllData);
     app.use("/api/authSystem", router);
 };
